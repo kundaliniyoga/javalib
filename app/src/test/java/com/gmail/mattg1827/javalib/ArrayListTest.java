@@ -1,5 +1,6 @@
 package com.gmail.mattg1827.javalib;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -8,14 +9,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ArrayListTest {
 
+    private JavaLibArrayList<Integer> unit;
+    private ArrayList<Integer> expected;
 
+    @BeforeEach
+    public void setup(){
+        unit = new JavaLibArrayList<>();
+        expected = new ArrayList<>();
+    }
 
 
     @Test
     public void addIntegerToList(){
-        //Arrange
-        JavaLibArrayList<Integer> unit = new JavaLibArrayList<Integer>();
-        ArrayList<Integer> expected = new ArrayList<Integer>();
 
         //Act
         Integer number = 3;
@@ -29,28 +34,26 @@ public class ArrayListTest {
     @Test
     public void addStringToList(){
         //Arrange
-        JavaLibArrayList<String> unit = new JavaLibArrayList<String>();
-        ArrayList<String> expected = new ArrayList<String>();
+        JavaLibArrayList<String> unitString = new JavaLibArrayList<>();
+        ArrayList<String> expectedString = new ArrayList<>();
 
         //Act
         String sentence = "It was my best day ever.";
-        unit.add(sentence);
-        expected.add(sentence);
+        unitString.add(sentence);
+        expectedString.add(sentence);
 
         //Assert
-        assertEquals(expected.toString(), unit.toString());
+        assertEquals(expectedString.toString(), unitString.toString());
     }
 
     @Test
     public void clearList(){
-        //Arrange
-        JavaLibArrayList<String> unit = new JavaLibArrayList<String>();
-        ArrayList<String> expected = new ArrayList<String>();
 
         //Act
         String sentence = "It was my best day ever.";
-        unit.add(sentence);
-        expected.add(sentence);
+        Integer number = 3;
+        unit.add(number);
+        expected.add(number);
 
         expected.clear();
         unit.clear();
