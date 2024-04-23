@@ -22,6 +22,20 @@ public class ArrayListTest {
         unit.add(number);
         expected.add(number);
 
+        //Assert
+        assertEquals(expected.toString(), unit.toString());
+    }
+
+    @Test
+    public void addStringToList(){
+        //Arrange
+        JavaLibArrayList<String> unit = new JavaLibArrayList<String>();
+        ArrayList<String> expected = new ArrayList<String>();
+
+        //Act
+        String sentence = "It was my best day ever.";
+        unit.add(sentence);
+        expected.add(sentence);
 
         //Assert
         assertEquals(expected.toString(), unit.toString());
