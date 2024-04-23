@@ -18,10 +18,20 @@ public class ArrayListTest {
         expected = new ArrayList<>();
     }
 
+    @Test
+    public void setCapacity(){
+        //Arrange
+        JavaLibArrayList<String> actualList = new JavaLibArrayList<>(20);
+
+        //Act
+        int actual = actualList.getCapacity();
+
+        //Assert
+        assertEquals(20, actual);
+    }
 
     @Test
     public void addIntegerToList(){
-
         //Act
         Integer number = 3;
         unit.add(number);
@@ -48,9 +58,7 @@ public class ArrayListTest {
 
     @Test
     public void clearList(){
-
         //Act
-        String sentence = "It was my best day ever.";
         Integer number = 3;
         unit.add(number);
         expected.add(number);
