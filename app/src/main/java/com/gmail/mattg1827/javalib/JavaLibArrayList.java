@@ -3,17 +3,17 @@ package com.gmail.mattg1827.javalib;
 public class JavaLibArrayList<T> {
 
     private final int DEFAULT_CAPACITY = 10;
-    private int INITIAL_SIZE;
+    private int SIZE;
     private Object[] array;
 
     public JavaLibArrayList() {
-        INITIAL_SIZE = 0;
+        SIZE = 0;
         array= new Object[DEFAULT_CAPACITY];
     }
 
     public void add(T item) {
-        array[INITIAL_SIZE] = item;
-        INITIAL_SIZE++;
+        array[SIZE] = item;
+        SIZE++;
     }
 
    @Override
@@ -21,11 +21,15 @@ public class JavaLibArrayList<T> {
         StringBuilder arrayToString = new StringBuilder();
         arrayToString.append("[");
 
-        for (int i = 0; i < INITIAL_SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
             arrayToString.append(array[i]);
         }
         arrayToString.append("]");
         return arrayToString.toString();
     }
 
+    public void clear() {
+        for (int to = SIZE, i = SIZE = 0; i < to; i++)
+            array[i] = null;
+    }
 }
