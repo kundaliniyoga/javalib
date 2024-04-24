@@ -1,4 +1,4 @@
-package com.gmail.mattg1827.javalib;
+package dev.matthewryan.javalib;
 
 public class JavaLibArrayList<T> {
 

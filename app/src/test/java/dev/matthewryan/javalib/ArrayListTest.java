@@ -1,4 +1,4 @@
-package com.gmail.mattg1827.javalib;
+package dev.matthewryan.javalib;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
