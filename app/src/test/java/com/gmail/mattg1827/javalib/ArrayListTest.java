@@ -69,4 +69,46 @@ public class ArrayListTest {
         //Assert
         assertEquals(expected.toString(), unit.toString());
     }
+
+    @Test
+    public void addToIndex(){
+        //Act
+        Integer number = 77;
+        for (int i = 0; i < 6; i++) {
+            expected.add(i);
+            unit.add(i);
+        }
+        expected.add(6, number);
+        unit.add(6, number);
+
+        //Assert
+        assertEquals(expected.toString(), unit.toString());
+    }
+
+    @Test
+    public void checkSize(){
+        //Act
+        for (int i = 0; i < 6; i++) {
+            expected.add(i);
+            unit.add(i);
+        }
+        int expectedSize = expected.size();
+        int actualSize = unit.size();
+
+        //Assert
+        assertEquals(expectedSize, actualSize);
+    }
+
+    @Test
+    public void checkInvalidIndexWhenAdding(){
+        //Act
+        Integer number = 77;
+        for (int i = 0; i < 6; i++) {
+            unit.add(i);
+        }
+        int actual = unit.add(99, number);
+
+        //Assert
+        assertEquals(-1, actual);
+    }
 }

@@ -26,10 +26,12 @@ public class JavaLibArrayList<T> {
    @Override
     public String toString(){
         StringBuilder arrayToString = new StringBuilder("[");
-
-        for (int i = 0; i < SIZE; i++) {
-            arrayToString.append(array[i]);
-        }
+        if (size() != 0){
+           for (int i = 0; i < SIZE - 1; i++) {
+               arrayToString.append(array[i] + ", ");
+           }
+           arrayToString.append(array[SIZE - 1]);
+       }
         arrayToString.append("]");
         return arrayToString.toString();
     }
@@ -41,5 +43,22 @@ public class JavaLibArrayList<T> {
 
     public int getCapacity() {
         return CAPACITY;
+    }
+
+    public int add(int index, T item) {
+        if ((SIZE+1 < CAPACITY) && !(index < 0) && !(index > size())) {
+            if (index != SIZE+1) {
+                for (int i = SIZE+1; i > index; i--)
+                    array[i] = array[i-1];
+            }
+            array[index] = item;
+            SIZE++;
+            return index;
+        }
+        return -1;
+    }
+
+    public int size() {
+        return SIZE;
     }
 }
