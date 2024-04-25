@@ -61,4 +61,8 @@ public class JavaLibArrayList<T> {
     public int size() {
         return SIZE;
     }
+
+    public void remove(T i) {
+
+    }
 }

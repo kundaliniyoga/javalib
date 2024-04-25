@@ -111,4 +111,19 @@ public class ArrayListTest {
         //Assert
         assertEquals(-1, actual);
     }
+
+    @Test
+    public void checkRemove(){
+        //Act
+        Integer number = 77;
+        for (int i = 0; i < 6; i++) {
+            expected.add(i);
+            unit.add(i);
+        }
+        expected.remove(6);
+        unit.remove(6);
+
+        //Assert
+        assertEquals(expected.toString(), unit.toString());
+    }
 }
