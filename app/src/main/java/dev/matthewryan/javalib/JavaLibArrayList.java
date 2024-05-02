@@ -62,7 +62,11 @@ public class JavaLibArrayList<T> {
         return SIZE;
     }
 
-    public void remove(T i) {
-
+    public void remove(int index) {
+        if (!(index > SIZE) && !(index < 0)) {
+            for (; index < SIZE; index++)
+                array[index] = array[index + 1];
+            SIZE--;
+        }
     }
 }
